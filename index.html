@@ -1,0 +1,176 @@
+@ -0,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李怂 - 个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <em>暗色模式</em>
+    </div>
+
+    <header class="header">
+        <div class="avatar-container">
+            <img src="images/avatar.jpg" alt="李怂的头像" class="avatar-image" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <h1>李怂</h1>
+        <p class="subtitle">光而不耀，静水流深</p>
+        <div class="subtitle-tags">
+            <span class="tag">长期主义者</span>
+            <span class="tag">INTJ</span>
+            <span class="tag">技术探索者</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="card" id="about">
+            <h2>自我介绍</h2>
+            <p>你好！我是李怂，本名李成，又称李从心，一个充满热情的 INTJ 型人格。</p>
+            <p>作为一名在校大学生，我是一个坚定的长期主义者，信奉定投理念，并将其运用于我的生活与理财之中。</p>
+            <p>我喜欢探索技术、历史、心理和哲学，热衷于计算机科学、逻辑思考和创新。</p>
+            <p>我专注于个人成长，热爱学习新技术，并将新技术用于自身发展。</p>
+            <p>我是一个乐观的人，喜欢尝试新事物，喜欢挑战自己。我相信，只要你有梦想，就有机会实现它。</p>
+        </section>
+
+        <section class="card" id="personality">
+            <h2>性格特征</h2>
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <h3>MBTI 性格类型：INTJ</h3>
+                    <ul>
+                        <li>内向 - 理性思考</li>
+                        <li>直觉 - 关注可能</li>
+                        <li>思维 - 逻辑决策</li>
+                        <li>判断 - 计划执行</li>
+                    </ul>
+                </div>
+                <div class="personality-item">
+                    <h3>霍兰德职业兴趣</h3>
+                    <div class="holland-grid">
+                        <div class="holland-item">
+                            <div class="holland-letter">I</div>
+                            <div class="holland-type">研究型</div>
+                            <div class="holland-desc">善于分析和探索问题</div>
+                        </div>
+                        <div class="holland-item">
+                            <div class="holland-letter">R</div>
+                            <div class="holland-type">现实型</div>
+                            <div class="holland-desc">注重实践和具体操作</div>
+                        </div>
+                        <div class="holland-item">
+                            <div class="holland-letter">C</div>
+                            <div class="holland-type">常规型</div>
+                            <div class="holland-desc">追求秩序和行为规范</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="habits">
+            <h2>成长习惯</h2>
+            <div class="habits-grid">
+                <div class="habit-item">
+                    <h3>阅读</h3>
+                    <p>日均阅读一小时</p>
+                </div>
+                <div class="habit-item">
+                    <h3>运动</h3>
+                    <p>累计夜跑三百天</p>
+                </div>
+                <div class="habit-item">
+                    <h3>理财</h3>
+                    <p>定投币圈三百天</p>
+                </div>
+                <div class="habit-item">
+                    <h3>写作</h3>
+                    <p>累计字数十五万+</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="interests">
+            <h2>兴趣爱好</h2>
+            <div class="interests-container">
+                <div class="interests-list">
+                    <h3>兴趣爱好</h3>
+                    <div class="interest-item">乒乓：八年生涯，水平依旧</div>
+                    <div class="interest-item">台球：周末无事，必打台球</div>
+                    <div class="interest-item">音乐：深夜回忆，音乐渡我</div>
+                    <div class="interest-item">电影：身在陋室，心游世界</div>
+                    <div class="interest-item">阅读：徜徉书海，亦师亦友</div>
+                    <div class="interest-item">搞钱：人生大事，搞钱重要</div>
+                </div>
+                <div class="interests-chart">
+                    <h3>兴趣分布</h3>
+                    <div style="height: 300px;">
+                        <canvas id="interestsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="education">
+            <h2>教育背景</h2>
+            <p>南通大学·计算机科学与技术</p>
+        </section>
+
+        <section class="card" id="recent">
+            <h2>最近动态</h2>
+            <div class="recent-activities">
+                <div class="activity">
+                    <h3>深入理解阳明心学</h3>
+                    <p>探索知行合一的哲学思想，以及其在现代生活中的应用</p>
+                </div>
+                <div class="activity">
+                    <h3>个人用AI agent的开发</h3>
+                    <p>基于大语言模型，开发个人助手，提升工作效率</p>
+                </div>
+                <div class="activity">
+                    <h3>一个线上支流项目的尝试</h3>
+                    <p>我想和这个世界谈谈，连接青少年与世界</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="social">
+            <h2>社交媒体</h2>
+            <div class="social-grid">
+                <div class="social-item">
+                    <h3>微信</h3>
+                    <p>惊鸿</p>
+                    <p>朋友圈分享个人感悟与思考</p>
+                    <img src="images/wechat-qr_resized.png" alt="微信二维码" class="qr-code">
+                </div>
+                <div class="social-item">
+                    <h3>微信公众号</h3>
+                    <p>李怂</p>
+                    <p>个人成长、个人观点、个人创意</p>
+                    <img src="images/mp-qr_resized.png" alt="公众号二维码" class="qr-code">
+                </div>
+                <div class="social-item">
+                    <h3>微信视频号</h3>
+                    <p>李怂</p>
+                    <p>个人分享</p>
+                    <img src="images/video-qr_resized.png" alt="视频号二维码" class="qr-code">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 李怂. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
