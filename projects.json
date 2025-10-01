@@ -4,7 +4,7 @@
       "id": 1,
       "name": "LibreTV",
       "description": "一个自由开放的视频聚合平台，提供高质量的视频内容聚合服务",
-      "thumbnail": "images/libretv-thumb.jpg",
+      "thumbnail": "images/libretv-thumb.png",
       "link": "https://libretv.licheng.website",
       "technologies": ["Vue.js", "Node.js", "MongoDB"],
       "status": "在线"
