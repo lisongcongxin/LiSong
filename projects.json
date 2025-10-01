@@ -8,33 +8,6 @@
       "link": "https://libretv.licheng.website",
       "technologies": ["Vue.js", "Node.js", "MongoDB"],
       "status": "在线"
-    },
-    {
-      "id": 2,
-      "name": "智能简历工具",
-      "description": "基于AI的智能简历生成和优化工具，帮助求职者创建专业简历",
-      "thumbnail": "images/resume-tool-thumb.jpg",
-      "link": "https://resume.licheng.website",
-      "technologies": ["React", "Python", "OpenAI API"],
-      "status": "开发中"
-    },
-    {
-      "id": 3,
-      "name": "个人博客",
-      "description": "技术分享与生活感悟的个人博客，记录成长历程",
-      "thumbnail": "images/blog-thumb.jpg",
-      "link": "https://blog.licheng.website",
-      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
-      "status": "在线"
-    },
-    {
-      "id": 4,
-      "name": "AI助手项目",
-      "description": "基于大语言模型的个人AI助手，提升工作效率",
-      "thumbnail": "images/ai-assistant-thumb.jpg",
-      "link": "https://ai.licheng.website",
-      "technologies": ["Python", "FastAPI", "GPT-4"],
-      "status": "测试中"
     }
   ]
 }
