@@ -33,11 +33,49 @@
     <main>
         <section class="card" id="about">
             <h2>自我介绍</h2>
-            <p>你好！我是李怂，本名李成，字道达，一个充满热情的 INTJ 型人格。</p>
+            <p>你好！我是李怂，本名李成，又称李从心，一个充满热情的 INTJ 型人格。</p>
             <p>作为一名在校大学生，我是一个坚定的长期主义者，信奉定投理念，并将其运用于我的生活与理财之中。</p>
             <p>我喜欢探索技术、历史、心理和哲学，热衷于计算机科学、逻辑思考和创新。</p>
             <p>我专注于个人成长，热爱学习新技术，并将新技术用于自身发展。</p>
             <p>我是一个乐观的人，喜欢尝试新事物，喜欢挑战自己。我相信，只要你有梦想，就有机会实现它。</p>
+        </section>
+
+        <section class="card" id="projects">
+            <h2>项目展示</h2>
+            <div class="collapsible-content">
+                <div class="projects-grid" id="projects-container">
+                    <!-- 项目卡片将通过JavaScript动态加载 -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>正在加载项目...</p>
+                    </div>
+                </div>
+            </div>
+            <button class="collapsible-toggle" data-target="projects">展开查看</button>
+        </section>
+
+        <section class="card" id="thoughts">
+            <h2>今日思考</h2>
+            <div class="collapsible-content">
+                <div class="thoughts-container">
+                    <div class="thought-item">
+                        <h3>关于成长的思考</h3>
+                        <p class="thought-date">2024年12月</p>
+                        <p class="thought-content">真正的成长不是变得完美，而是学会与不完美共舞。每一次的挫折都是通往智慧的阶梯，每一次的失败都是成功的垫脚石。</p>
+                    </div>
+                    <div class="thought-item">
+                        <h3>技术与人性的平衡</h3>
+                        <p class="thought-date">2024年11月</p>
+                        <p class="thought-content">在追求技术卓越的同时，我们不能忘记技术服务于人的本质。最好的技术是那些能够真正改善人们生活的技术。</p>
+                    </div>
+                    <div class="thought-item">
+                        <h3>长期主义的价值</h3>
+                        <p class="thought-date">2024年10月</p>
+                        <p class="thought-content">在这个快节奏的时代，坚持长期主义显得尤为珍贵。就像定投一样，持续的努力终将在时间的复利下绽放出惊人的力量。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="collapsible-toggle" data-target="thoughts">展开查看</button>
         </section>
 
         <section class="card" id="personality">
