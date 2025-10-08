@@ -3,21 +3,29 @@
     {
       "id": 1,
       "name": "LibreTV",
-      "description": "一个自由开放的视频聚合平台，提供高质量的视频内容聚合服务",
-      "thumbnail": "images/libretv-thumb.png",
+      "description": "\u4e00\u4e2a\u81ea\u7531\u5f00\u653e\u7684\u89c6\u9891\u805a\u5408\u5e73\u53f0\uff0c\u63d0\u4f9b\u9ad8\u8d28\u91cf\u7684\u89c6\u9891\u5185\u5bb9\u805a\u5408\u670d\u52a1",
       "link": "https://libretv.licheng.website",
-      "technologies": ["Vue.js", "Node.js", "MongoDB"],
-      "status": "在线"
+      "technologies": [
+        "Vue.js",
+        "Node.js",
+        "MongoDB"
+      ],
+      "status": "\u5728\u7ebf"
     },
-
-    {                                                                         
-      "id": 2,                                                                  
-      "name": "Longevity Habits",                                       
-      "description": "面向长寿爱好者的数字习惯教练，提供 AI 洞察、任务打卡与可视化进度追踪。",                                                            
-      "thumbnail": "images/pulse10-thumb.png",                                  
-      "link": "https://your-netlify-domain.netlify.app",                        
-      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand","Framer Motion"],                                                         
-      "status": "在线"                                                          
+    {
+      "id": 2,
+      "name": "Longevity Habits",
+      "description": "\u9762\u5411\u957f\u5bff\u7231\u597d\u8005\u7684\u6570\u5b57\u4e60\u60ef\u6559\u7ec3\uff0c\u63d0\u4f9b AI \u6d4b\u63a2\u3001\u4efb\u52a1\u6253\u5361\u4e0e\u53ef\u89c6\u5316\u8fdb\u5ea6\u8ffd\u8e2a",
+      "link": "https://your-netlify-domain.netlify.app",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Zustand",
+        "Framer Motion"
+      ],
+      "status": "\u5728\u7ebf"
     }
   ]
 }
