@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Longevity Habits",
       "description": "面向长寿爱好者的数字习惯教练，提供洞察、任务打卡与可视化进度追踪",
-      "link": "https://your-netlify-domain.netlify.app",
+      "link": "https://longevityhabits.licheng.website",
       "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand", "Framer Motion"],
       "status": "在线"
     }
