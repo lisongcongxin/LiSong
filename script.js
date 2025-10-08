@@ -70,30 +70,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 创建项目卡片
+
     function createProjectCard(project) {
         const card = document.createElement('div');
         card.className = 'project-item';
-        card.onclick = () => window.open(project.link, '_blank');
 
-        // 根据状态设置CSS类
-        const statusClass = getStatusClass(project.status);
+        const projectLink = typeof project.link === 'string' ? project.link.trim() : '';
+        const hasLink = projectLink.length > 0;
+
+        if (hasLink) {
+            card.classList.add('is-clickable');
+            card.setAttribute('role', 'link');
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('click', (event) => {
+                if (event.target.closest('.project-link')) {
+                    return;
+                }
+                window.open(projectLink, '_blank', 'noopener,noreferrer');
+            });
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    window.open(projectLink, '_blank', 'noopener,noreferrer');
+                }
+            });
+        }
+
+        const statusText = (project.status || '').trim();
+        const statusClass = getStatusClass(statusText);
+        const techList = Array.isArray(project.technologies) ? project.technologies : [];
+
+        const statusMarkup = statusText ? `<span class="project-status ${statusClass}">${statusText}</span>` : '';
+        const descriptionMarkup = project.description ? `<p class="project-description">${project.description}</p>` : '';
+        const techMarkup = techList.map((tech) => `<span class="tech-tag">${tech}</span>`).join('');
+        const technologiesMarkup = techMarkup ? `<div class="project-technologies">${techMarkup}</div>` : '';
+        const linkMarkup = hasLink
+            ? `<a class="project-link" href="${projectLink}" target="_blank" rel="noopener noreferrer">访问项目<span class="link-icon" aria-hidden="true">&#8599;</span></a>`
+            : '<span class="project-link disabled">暂无链接</span>';
 
         card.innerHTML = `
-            <img src="${project.thumbnail}" alt="${project.name}" class="project-thumbnail" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaXoOazleiDveWKoOi9veWbvueJhzwvdGV4dD48L3N2Zz4='">
             <div class="project-content">
-                <h3 class="project-name">${project.name}</h3>
-                <p class="project-description">${project.description}</p>
-                <div class="project-technologies">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                <div class="project-header">
+                    <h3 class="project-name">${project.name || '未命名项目'}</h3>
+                    ${statusMarkup}
                 </div>
-                <span class="project-status ${statusClass}">${project.status}</span>
-                <div class="project-link">访问项目 →</div>
+                ${descriptionMarkup}
+                ${technologiesMarkup}
+                ${linkMarkup}
             </div>
         `;
 
         return card;
     }
-
     // 根据状态获取CSS类
     function getStatusClass(status) {
         const statusMap = {
