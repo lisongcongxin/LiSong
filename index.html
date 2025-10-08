@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="李怂的个人主页 - 长期主义者、INTJ、技术探索者。分享个人成长、技术思考与项目作品。">
+    <meta name="keywords" content="李怂,李成,个人主页,技术博客,INTJ,长期主义,计算机科学">
+    <meta name="author" content="李怂">
+
+    <!-- Open Graph / 社交媒体分享 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="李怂 - 个人主页">
+    <meta property="og:description" content="光而不耀，静水流深 - 长期主义者、INTJ、技术探索者">
+    <meta property="og:image" content="images/avatar.jpg">
+
+    <!-- 性能优化 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
     <title>李怂 - 个人主页</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 <body>
     <div class="theme-switch-wrapper">
@@ -19,7 +36,7 @@
 
     <header class="header">
         <div class="avatar-container">
-            <img src="images/avatar.jpg" alt="李怂的头像" class="avatar-image" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="images/avatar.jpg" alt="李怂的头像" class="avatar-image" loading="eager" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <h1>李怂</h1>
         <p class="subtitle">光而不耀，静水流深</p>
@@ -186,19 +203,19 @@
                     <h3>微信</h3>
                     <p>惊鸿</p>
                     <p>朋友圈分享个人感悟与思考</p>
-                    <img src="images/wechat-qr_resized.png" alt="微信二维码" class="qr-code">
+                    <img src="images/wechat-qr_resized.png" alt="微信二维码" class="qr-code" loading="lazy">
                 </div>
                 <div class="social-item">
                     <h3>微信公众号</h3>
                     <p>李怂</p>
                     <p>个人成长、个人观点、个人创意</p>
-                    <img src="images/mp-qr_resized.png" alt="公众号二维码" class="qr-code">
+                    <img src="images/mp-qr_resized.png" alt="公众号二维码" class="qr-code" loading="lazy">
                 </div>
                 <div class="social-item">
                     <h3>微信视频号</h3>
                     <p>李怂</p>
                     <p>个人分享</p>
-                    <img src="images/video-qr_resized.png" alt="视频号二维码" class="qr-code">
+                    <img src="images/video-qr_resized.png" alt="视频号二维码" class="qr-code" loading="lazy">
                 </div>
             </div>
         </section>
@@ -208,6 +225,6 @@
         <p>© 2024 李怂. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

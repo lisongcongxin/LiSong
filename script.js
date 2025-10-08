@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const statusClass = getStatusClass(project.status);
 
         card.innerHTML = `
-            <img src="${project.thumbnail}" alt="${project.name}" class="project-thumbnail" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaXoOazleiDveWKoOi9veWbvueJhzwvdGV4dD48L3N2Zz4='">
+            <img src="${project.thumbnail}" alt="${project.name}" class="project-thumbnail" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaXoOazleiDveWKoOi9veWbvueJhzwvdGV4dD48L3N2Zz4='">
             <div class="project-content">
                 <h3 class="project-name">${project.name}</h3>
                 <p class="project-description">${project.description}</p>
@@ -120,41 +120,69 @@ document.addEventListener('DOMContentLoaded', function() {
     // 页面加载完成后加载项目数据
     loadProjects();
 
-    // 兴趣爱好饼图
-    const ctx = document.getElementById('interestsChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['阅读', '运动', '台球', '音乐', '电影', '理财'],
-            datasets: [{
-                data: [25, 20, 15, 15, 15, 10],
-                backgroundColor: [
-                    '#3B82F6',  // 蓝色
-                    '#10B981',  // 绿色
-                    '#EF4444',  // 红色
-                    '#F59E0B',  // 黄色
-                    '#8B5CF6',  // 紫色
-                    '#06B6D4'   // 青色
-                ],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right',
-                    labels: {
-                        font: {
-                            family: '"Noto Sans SC", sans-serif',
-                            size: 14
-                        },
-                        padding: 15,
-                        color: getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+    // 兴趣爱好饼图 - 适配深色模式
+    function createInterestsChart() {
+        const ctx = document.getElementById('interestsChart');
+        if (!ctx) return;
+
+        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+        const textColor = isDarkMode ? '#e6f1ff' : '#1f2937';
+
+        new Chart(ctx.getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: ['阅读', '运动', '台球', '音乐', '电影', '理财'],
+                datasets: [{
+                    data: [25, 20, 15, 15, 15, 10],
+                    backgroundColor: [
+                        '#3B82F6',  // 蓝色
+                        '#10B981',  // 绿色
+                        '#EF4444',  // 红色
+                        '#F59E0B',  // 黄色
+                        '#8B5CF6',  // 紫色
+                        '#06B6D4'   // 青色
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                family: '"Noto Sans SC", sans-serif',
+                                size: 14
+                            },
+                            padding: 15,
+                            color: textColor
+                        }
                     }
                 }
             }
+        });
+    }
+
+    // 等待Chart.js加载完成后初始化图表
+    if (typeof Chart !== 'undefined') {
+        createInterestsChart();
+    } else {
+        window.addEventListener('load', createInterestsChart);
+    }
+
+    // 主题切换时更新图表颜色
+    toggleSwitch.addEventListener('change', function() {
+        // 重新加载图表以适配新主题
+        const chartCanvas = document.getElementById('interestsChart');
+        if (chartCanvas && typeof Chart !== 'undefined') {
+            const chart = Chart.getChart(chartCanvas);
+            if (chart) {
+                chart.destroy();
+            }
+            // 短暂延迟以确保主题已切换
+            setTimeout(createInterestsChart, 100);
         }
     });
 });

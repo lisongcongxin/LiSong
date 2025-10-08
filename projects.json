@@ -8,6 +8,16 @@
       "link": "https://libretv.licheng.website",
       "technologies": ["Vue.js", "Node.js", "MongoDB"],
       "status": "在线"
+    },
+
+    {                                                                         
+      "id": 2,                                                                  
+      "name": "Longevity Habits",                                       
+      "description": "面向长寿爱好者的数字习惯教练，提供 AI 洞察、任务打卡与可视化进度追踪。",                                                            
+      "thumbnail": "images/pulse10-thumb.png",                                  
+      "link": "https://your-netlify-domain.netlify.app",                        
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand","Framer Motion"],                                                         
+      "status": "在线"                                                          
     }
   ]
 }
